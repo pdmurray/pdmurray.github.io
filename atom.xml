@@ -1,0 +1,29 @@
+---
+layout: null
+---
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Patrick Murray | Blog</title>
+  <link href="https://www.lucid3.org/"/>
+  <link type="application/atom+xml" rel="self" href="https://www.lucid3.org/atom.xml"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>https://www.lucid3.org/</id>
+  <author>
+    <name>Patrick Murray</name>
+    <email>patrick.murray@lucid3.org</email>
+  </author>
+  {% assign blogposts = site.categories.blog %}
+  {% for post in blogposts %}
+  <entry>
+    <id>https://www.lucid3.org{{ post.id }}</id>
+    <link type="text/html" rel="alternate" href="https://www.lucid3.org{{ post.url }}"/>
+    <title>{{ post.title | xml_escape }}</title>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <author>
+      <name>Patrick Murray</name>
+      <uri>https://www.lucid3.org/</uri>
+    </author>
+    <content type="html">{{ post.content | xml_escape }}</content>
+  </entry>
+  {% endfor %}
+</feed>

@@ -1,0 +1,45 @@
+{% if site.enforce_ssl %}
+<!--
+redirect users to the https version of the website.
+but: only check when on the production domain, as set in _config.yml.
+-->
+<script type="text/javascript">
+var enforce = "{{ site.enforce_ssl }}";
+if ((enforce == window.location.host) && (window.location.protocol != "https:"))
+  window.location = window.location.toString().replace(/^http:/, "https:");
+</script>
+{% endif %}
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="author" content="Patrick Murray">
+<meta name="description" content="Software engineer">
+<meta name="keywords" content="Patrick,Murray,Web,Development,Personal">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+<link rel="alternate" type="application/rss+xml" href="/rss.xml" title="RSS feed">
+<!-- <link rel="apple-touch-icon" href="https://secure.gravatar.com/avatar/a272575abfabae4ba57f5ae7a2edcf00.png" /> -->
+<!-- <meta property="og:image" content="https://secure.gravatar.com/avatar/a272575abfabae4ba57f5ae7a2edcf00.png"/> -->
+<meta property="og:site_name" content="Patrick Murray"/>
+<title>{{ page.title }}</title>
+<link rel="icon" type="image/png" href="/img/favicon.png">
+
+<script src="/js/lucid3.js"></script>
+<link rel="stylesheet" href="/css/pure-min.css">
+<link rel="stylesheet" href="/css/pygment_trac.css">
+<link rel="stylesheet" href="/css/font-awesome.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/styles.css">
+
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/grids-responsive-old-ie-min.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/grids-responsive-min.css">
+<!--<![endif]-->
+
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->

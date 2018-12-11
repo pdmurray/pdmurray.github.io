@@ -1,0 +1,17 @@
+---
+layout: default
+root: true
+---
+
+<small style="float:right; margin-top:2px;">
+	{{ page.date | date:'%a %d %b %Y' }}
+</small>
+<h3>
+	{{ page.title }}
+</h3>
+
+<p></p>
+
+{{ content }}
+<hr />
+{% include comments.html %}
