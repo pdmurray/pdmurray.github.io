@@ -6,7 +6,8 @@ but: only check when on the production domain, as set in _config.yml.
 <script type="text/javascript">
 var enforce = "{{ site.enforce_ssl }}";
 if ((enforce == window.location.host) && (window.location.protocol != "https:"))
-  window.location = window.location.toString().replace(/^http:/, "https:");
+  // do nothing
+  // window.location = window.location.toString().replace(/^http:/, "https:");
 </script>
 {% endif %}
 <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
